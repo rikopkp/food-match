@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FOOD MATCH</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+  background: #faf8f5;
+  color: #333;
+}
+
+/* ヘッダー */
+
+header {
+  background: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #e87545;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* メインビジュアル */
+
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: #fff1e9;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0 0 15px;
+}
+
+.hero p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* 検索 */
+
+.search {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.search input,
+.search select {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.search button {
+  background: #e87545;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 求人 */
+
+main {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.photo {
+  height: 160px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: #fff0e9;
+  color: #d85d32;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.card h3 {
+  margin: 12px 0 5px;
+}
+
+.location {
+  color: #777;
+  font-size: 13px;
+}
+
+.salary {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+/* フッター */
+
+footer {
+  margin-top: 70px;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+}
+
+/* スマホ対応 */
+
+@media (max-width: 800px) {
+
+  .jobs {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search button {
+    padding: 14px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  nav {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+FOOD <span>MATCH</span>
+</div>
+
+<nav>
+
+<a href="#">求人を探す</a>
+
+<a href="#">店舗の方へ</a>
+
+<a href="#">ログイン</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>
+飲食で働くなら、FOOD MATCH。
+</h1>
+
+<p>
+あなたにぴったりのお店と出会える、飲食店専門求人サイト
+</p>
+
+
+<div class="search">
+
+
+<input
+id="keyword"
+type="text"
+placeholder="職種・キーワード"
+/>
+
+
+<select id="area">
+
+<option value="">
+エリア
+</option>
+
+<option value="池袋">
+池袋
+</option>
+
+<option value="新宿">
+新宿
+</option>
+
+<option value="渋谷">
+渋谷
+</option>
+
+</select>
+
+
+<select id="jobtype">
+
+<option value="">
+職種
+</option>
+
+<option value="ホール">
+ホール
+</option>
+
+<option value="キッチン">
+キッチン
+</option>
+
+<option value="カフェ">
+カフェ
+</option>
+
+</select>
+
+
+<button onclick="searchJobs()">
+検索
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<main>
+
+
+<div class="title">
+
+<h2>
+あなたにおすすめの求人
+</h2>
+
+<span id="count">
+3件
+</span>
+
+</div>
+
+
+
+<div class="jobs" id="jobs">
+
+
+
+<!-- 求人1 -->
+
+<div class="card">
+
+<div class="photo">
+🍣
+</div>
+
+<div class="card-content">
+
+<span class="tag">
+ホール
+</span>
+
+<h3>
+鮨 ○○ 池袋店
+</h3>
+
+<div class="location">
+📍 池袋駅 徒歩3分
+</div>
+
+<div class="salary">
+時給 1,600円〜
+</div>
+
+<p>
+週2日〜 / 未経験OK / まかないあり
+</p>
+
+<button onclick="likeJob('鮨 ○○ 池袋店')">
+♡ 気になる
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 求人2 -->
+
+<div class="card">
+
+<div class="photo">
+🍺
+</div>
+
+<div class="card-content">
+
+<span class="tag">
+居酒屋
+</span>
+
+<h3>
+炭火酒場 とり家
+</h3>
+
+<div class="location">
+📍 新宿駅 徒歩5分
+</div>
+
+<div class="salary">
+時給 1,500円〜
+</div>
+
+<p>
+髪色自由 / 未経験歓迎 / 週3日〜
+</p>
+
+<button onclick="likeJob('炭火酒場 とり家')">
+♡ 気になる
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 求人3 -->
+
+<div class="card">
+
+<div class="photo">
+☕
+</div>
+
+<div class="card-content">
+
+<span class="tag">
+カフェ
+</span>
+
+<h3>
+Cafe Lumière
+</h3>
+
+<div class="location">
+📍 渋谷駅 徒歩4分
+</div>
+
+<div class="salary">
+時給 1,800円〜
+</div>
+
+<p>
+オープニング / ネイルOK / 週3日〜
+</p>
+
+<button onclick="likeJob('Cafe Lumière')">
+♡ 気になる
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+
+<footer>
+
+FOOD MATCH © 2026
+
+</footer>
+
+
+
+<script>
+
+
+/* 気になるボタン */
+
+function likeJob(name) {
+
+alert(
+name + "を気になるに追加しました♡"
+);
+
+}
+
+
+
+/* 求人検索 */
+
+function searchJobs() {
+
+
+const keyword =
+document
+.getElementById("keyword")
+.value
+.toLowerCase();
+
+
+const area =
+document
+.getElementById("area")
+.value;
+
+
+const type =
+document
+.getElementById("jobtype")
+.value;
+
+
+const cards =
+document.querySelectorAll(".card");
+
+
+let count = 0;
+
+
+cards.forEach(card => {
+
+
+const text =
+card.innerText.toLowerCase();
+
+
+const matchKeyword =
+!keyword || text.includes(keyword);
+
+
+const matchArea =
+!area || text.includes(area);
+
+
+const matchType =
+!type || text.includes(type);
+
+
+if (
+matchKeyword &&
+matchArea &&
+matchType
+) {
+
+card.style.display = "";
+
+count++;
+
+}
+
+else {
+
+card.style.display = "none";
+
+}
+
+});
+
+
+document
+.getElementById("count")
+.innerText =
+count + "件";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

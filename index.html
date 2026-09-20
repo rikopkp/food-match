@@ -24,45 +24,69 @@ body {
 
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 
-  background: #fff7fa;
+  background: #fff7fb;
 
-  color: #302a30;
+  color: #333;
+
+  padding-bottom: 90px;
 
 }
 
 header {
 
-  background: white;
+  background: linear-gradient(135deg, #ff6fa8, #ff9b6a);
+
+  color: white;
 
   padding: 18px 20px;
 
-  border-bottom: 1px solid #eee;
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 10;
-
-}
-
-.logo {
+  text-align: center;
 
   font-size: 24px;
 
-  font-weight: 900;
+  font-weight: bold;
 
 }
 
-.logo .pink {
+.mode {
 
-  color: #ff4f8b;
+  display: flex;
+
+  margin: 15px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 5px;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 
 }
 
-.logo .purple {
+.mode button {
 
-  color: #6961ff;
+  flex: 1;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 11px;
+
+  background: transparent;
+
+  font-weight: bold;
+
+  color: #888;
+
+}
+
+.mode button.active {
+
+  background: #ff72a7;
+
+  color: white;
 
 }
 
@@ -70,53 +94,33 @@ header {
 
   text-align: center;
 
-  padding: 45px 20px 30px;
-
-  background: linear-gradient(135deg, #ffe1ed, #e8e5ff);
+  padding: 15px 15px 5px;
 
 }
 
 .hero h1 {
 
-  font-size: 38px;
+  font-size: 25px;
 
-  line-height: 1.15;
-
-  margin: 15px 0;
-
-}
-
-.hero h1 span {
-
-  color: #ff4f8b;
+  margin: 5px 0;
 
 }
 
 .hero p {
 
-  color: #6f6870;
+  color: #888;
 
-  line-height: 1.7;
+  margin: 5px 0 15px;
 
 }
 
 main {
 
-  max-width: 520px;
+  max-width: 500px;
 
   margin: auto;
 
-  padding: 20px;
-
-}
-
-.title {
-
-  font-size: 20px;
-
-  font-weight: 900;
-
-  margin-bottom: 15px;
+  padding: 0 15px;
 
 }
 
@@ -124,31 +128,37 @@ main {
 
   background: white;
 
-  border-radius: 28px;
+  border-radius: 25px;
 
   overflow: hidden;
 
-  box-shadow: 0 12px 35px rgba(0,0,0,.1);
+  box-shadow: 0 8px 25px rgba(255,105,150,0.15);
+
+  margin-top: 10px;
 
 }
 
 .card-top {
 
-  padding: 28px;
+  background: linear-gradient(135deg, #ffd5e5, #ffe9d9);
 
-  background: linear-gradient(135deg, #fff0f6, #f0efff);
+  padding: 25px 20px;
+
+  text-align: center;
 
 }
 
-.emoji {
+.avatar {
 
-  width: 75px;
+  width: 80px;
 
-  height: 75px;
+  height: 80px;
 
   background: white;
 
-  border-radius: 22px;
+  border-radius: 50%;
+
+  margin: auto;
 
   display: flex;
 
@@ -156,95 +166,65 @@ main {
 
   justify-content: center;
 
-  font-size: 40px;
+  font-size: 45px;
 
-  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 
 }
 
 .card h2 {
 
-  margin: 0 0 8px;
+  margin: 12px 0 5px;
 
 }
 
-.station {
+.sub {
 
   color: #777;
 
-  font-size: 13px;
-
-}
-
-.type {
-
-  display: inline-block;
-
-  margin-top: 12px;
-
-  background: #6961ff;
-
-  color: white;
-
-  padding: 6px 12px;
-
-  border-radius: 20px;
-
-  font-size: 12px;
-
-  font-weight: bold;
+  font-size: 14px;
 
 }
 
 .card-body {
 
-  padding: 25px;
+  padding: 20px;
 
 }
 
 .salary {
 
-  color: #ff4f8b;
+  font-size: 25px;
 
-  font-size: 28px;
+  font-weight: bold;
 
-  font-weight: 900;
+  color: #ff5794;
 
 }
 
 .tags {
 
-  display: flex;
+  margin: 12px 0;
 
-  flex-wrap: wrap;
-
-  gap: 7px;
-
-  margin: 18px 0;
+  line-height: 2;
 
 }
 
 .tag {
 
-  background: #f0efff;
+  display: inline-block;
 
-  color: #625bdf;
+  background: #fff0f6;
 
-  padding: 7px 10px;
+  color: #ff5794;
 
-  border-radius: 9px;
+  padding: 5px 9px;
 
-  font-size: 11px;
+  border-radius: 20px;
 
-  font-weight: bold;
+  margin: 3px;
 
-}
-
-.tag.green {
-
-  background: #eafaf3;
-
-  color: #299b6d;
+  font-size: 12px;
 
 }
 
@@ -254,53 +234,43 @@ main {
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 10px;
+  gap: 8px;
+
+  margin-top: 15px;
 
 }
 
 .info div {
 
-  background: #faf8fa;
+  background: #f8f8f8;
 
-  padding: 13px;
+  padding: 10px;
 
-  border-radius: 13px;
+  border-radius: 10px;
 
-}
-
-.info small {
-
-  display: block;
-
-  color: #999;
-
-  font-size: 10px;
-
-  margin-bottom: 5px;
-
-}
-
-.info strong {
-
-  font-size: 12px;
+  font-size: 13px;
 
 }
 
 .mbti {
 
-  margin-top: 20px;
+  margin-top: 15px;
 
-  padding: 17px;
+  background: #f0eaff;
 
-  border-radius: 18px;
+  border-radius: 15px;
 
-  background: linear-gradient(135deg,#f0efff,#fff0f6);
+  padding: 14px;
+
+  text-align: center;
 
 }
 
 .mbti small {
 
-  color: #777;
+  display: block;
+
+  color: #8064c7;
 
 }
 
@@ -308,11 +278,25 @@ main {
 
   display: block;
 
-  color: #6961ff;
-
-  font-size: 20px;
-
   margin-top: 5px;
+
+  color: #6546a5;
+
+}
+
+.pr {
+
+  background: #fff8e7;
+
+  border-radius: 15px;
+
+  padding: 14px;
+
+  margin-top: 15px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
 
 }
 
@@ -324,43 +308,53 @@ main {
 
   gap: 18px;
 
-  margin: 25px 0;
-
-}
-
-button {
-
-  border: none;
-
-  cursor: pointer;
+  margin: 20px 0;
 
 }
 
 .action {
 
-  width: 65px;
+  width: 62px;
 
-  height: 65px;
+  height: 62px;
 
   border-radius: 50%;
 
+  border: none;
+
   background: white;
 
-  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 
   font-size: 25px;
 
+  cursor: pointer;
+
 }
 
-.like {
+.action.like {
 
-  width: 75px;
+  color: #ff5794;
 
-  height: 75px;
+}
 
-  background: #ff4f8b;
+.action.scout {
 
-  color: white;
+  color: #8a63e8;
+
+}
+
+.section-title {
+
+  font-weight: bold;
+
+  margin: 20px 0 10px;
+
+}
+
+.hidden {
+
+  display: none;
 
 }
 
@@ -374,23 +368,23 @@ nav {
 
   right: 0;
 
-  height: 70px;
-
   background: white;
-
-  border-top: 1px solid #eee;
 
   display: flex;
 
-  justify-content: center;
+  justify-content: space-around;
 
-  gap: 35px;
+  padding: 10px 5px;
 
-  align-items: center;
+  box-shadow: 0 -3px 15px rgba(0,0,0,0.08);
+
+  z-index: 10;
 
 }
 
 nav button {
+
+  border: none;
 
   background: none;
 
@@ -398,17 +392,77 @@ nav button {
 
   font-size: 11px;
 
-}
-
-nav button:first-child {
-
-  color: #ff4f8b;
+  line-height: 1.5;
 
 }
 
-body {
+nav button span {
 
-  padding-bottom: 80px;
+  font-size: 20px;
+
+}
+
+.toast {
+
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 100px;
+
+  transform: translateX(-50%);
+
+  background: #333;
+
+  color: white;
+
+  padding: 14px 22px;
+
+  border-radius: 30px;
+
+  display: none;
+
+  z-index: 20;
+
+  white-space: nowrap;
+
+}
+
+.match-box {
+
+  background: linear-gradient(135deg, #ff72a7, #9b72ff);
+
+  color: white;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  margin-top: 20px;
+
+}
+
+.match-box h2 {
+
+  font-size: 28px;
+
+}
+
+.match-box button {
+
+  border: none;
+
+  background: white;
+
+  color: #ff5794;
+
+  padding: 12px 25px;
+
+  border-radius: 25px;
+
+  font-weight: bold;
 
 }
 
@@ -420,213 +474,409 @@ body {
 
 <header>
 
-  <div class="logo">
-
-    <span class="pink">Shoku</span><span class="purple">↔match</span>
-
-  </div>
+  Shoku↔match
 
 </header>
 
-<section class="hero">
+<div class="mode">
 
-  <div>🍽 飲食バイト・求人マッチング</div>
+  <button id="jobMode" class="active" onclick="showJob()">求職者</button>
 
-  <h1>
+  <button id="storeMode" onclick="showStore()">店舗</button>
 
-    働く場所も、<br>
+</div>
 
-    <span>相性</span>で選ぶ。
+<!-- 求職者側 -->
 
-  </h1>
+<section id="jobScreen">
 
-  <p>
+  <div class="hero">
 
-    条件だけじゃ分からない。<br>
+    <h1>働く場所も、相性で選ぶ。</h1>
 
-    お店の雰囲気とあなたの性格までマッチング。
+    <p>あなたに合いそうなお店を探そう♡</p>
 
-  </p>
+  </div>
+
+  <main>
+
+    <div class="card">
+
+      <div class="card-top">
+
+        <div class="avatar">🥩</div>
+
+        <h2>炭火焼肉 こはる</h2>
+
+        <div class="sub">📍 池袋駅 徒歩3分</div>
+
+        <div class="sub">焼肉・カジュアル</div>
+
+      </div>
+
+      <div class="card-body">
+
+        <div class="salary">¥1,600〜</div>
+
+        <div class="tags">
+
+          <span class="tag">髪色自由</span>
+
+          <span class="tag">ネイルOK</span>
+
+          <span class="tag">ピアスOK</span>
+
+          <span class="tag">まかない</span>
+
+          <span class="tag">交通費支給</span>
+
+        </div>
+
+        <div class="info">
+
+          <div>⏰ 17:00〜23:00</div>
+
+          <div>📅 週2日〜</div>
+
+          <div>👕 私服OK</div>
+
+          <div>👥 20代中心</div>
+
+          <div>🎉 ワイワイ系</div>
+
+          <div>⚥ 男女比 5:5</div>
+
+          <div>🚃 電車・自転車OK</div>
+
+          <div>📝 2週間ごと提出</div>
+
+        </div>
+
+        <div class="mbti">
+
+          <small>🧠 MBTI MATCH</small>
+
+          <strong>ENFP / ESFP と相性◎</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="buttons">
+
+      <button class="action" onclick="pass()">✕</button>
+
+      <button class="action" onclick="favorite()">★</button>
+
+      <button class="action like" onclick="jobLike()">♥</button>
+
+    </div>
+
+  </main>
 
 </section>
 
-<main>
+<!-- 店舗側 -->
 
-<div class="title">
+<section id="storeScreen" class="hidden">
 
-  あなたに合いそうなお店
+  <div class="hero">
 
-</div>
+    <h1>あなたに合う人を探そう。</h1>
 
-<div class="card">
-
-  <div class="card-top">
-
-    <div class="emoji">🥩</div>
-
-    <h2>炭火焼肉 こはる</h2>
-
-    <div class="station">
-
-      📍 池袋駅 徒歩3分
-
-    </div>
-
-    <div class="type">
-
-      焼肉
-
-    </div>
+    <p>マッチングアプリ感覚で求職者をチェック♡</p>
 
   </div>
 
-  <div class="card-body">
+  <main>
 
-    <div class="salary">
+    <div class="section-title">
 
-      ¥1,600〜
-
-    </div>
-
-    <div class="tags">
-
-      <span class="tag green">髪色自由</span>
-
-      <span class="tag green">ネイルOK</span>
-
-      <span class="tag green">ピアスOK</span>
-
-      <span class="tag">まかない</span>
-
-      <span class="tag">交通費支給</span>
+      求職者プロフィール
 
     </div>
 
-    <div class="info">
+    <div class="card">
 
-      <div>
+      <div class="card-top">
 
-        <small>勤務時間</small>
+        <div class="avatar">👩🏻‍🍳</div>
 
-        <strong>17:00〜23:30</strong>
+        <h2>りこさん</h2>
 
-      </div>
+        <div class="sub">
 
-      <div>
+          24歳 ・ 池袋エリア
 
-        <small>週何日</small>
-
-        <strong>週2〜OK</strong>
+        </div>
 
       </div>
 
-      <div>
+      <div class="card-body">
 
-        <small>服装</small>
+        <div class="mbti">
 
-        <strong>黒Tシャツ＋エプロン</strong>
+          <small>🧠 MBTI</small>
 
-      </div>
+          <strong>ENFP</strong>
 
-      <div>
+        </div>
 
-        <small>年齢層</small>
+        <div class="section-title">
 
-        <strong>20代中心</strong>
+          🍽 飲食経験
 
-      </div>
+        </div>
 
-      <div>
+        <div class="tags">
 
-        <small>雰囲気</small>
+          <span class="tag">ホール 2年</span>
 
-        <strong>ワイワイ</strong>
+          <span class="tag">接客</span>
 
-      </div>
+          <span class="tag">レジ</span>
 
-      <div>
+          <span class="tag">ドリンク</span>
 
-        <small>男女比</small>
+        </div>
 
-        <strong>4：6</strong>
+        <div class="section-title">
 
-      </div>
+          💕 希望条件
 
-      <div>
+        </div>
 
-        <small>通勤</small>
+        <div class="info">
 
-        <strong>自転車OK</strong>
+          <div>💰 時給1,500円〜</div>
 
-      </div>
+          <div>📅 週2〜4日</div>
 
-      <div>
+          <div>⏰ 夕方〜希望</div>
 
-        <small>シフト提出</small>
+          <div>📍 池袋周辺</div>
 
-        <strong>2週間ごと</strong>
+        </div>
+
+        <div class="pr">
+
+          <strong>✨ 自己PR</strong><br><br>
+
+          人と話すことが好きです！<br>
+
+          お客様に楽しく過ごしていただける接客を心がけています。
+
+          飲食店での経験を活かして、楽しく働けるお店を探しています♡
+
+        </div>
+
+        <div class="mbti">
+
+          <small>💘 お店との相性</small>
+
+          <strong>あなたのお店と相性 92%</strong>
+
+        </div>
 
       </div>
 
     </div>
 
-    <div class="mbti">
+    <div class="buttons">
 
-      <small>🧠 MBTI MATCH</small>
+      <button class="action" onclick="candidatePass()">
 
-      <strong>
+        ✕
 
-        ENFP / ESFP と相性◎
+      </button>
 
-      </strong>
+      <button class="action like" onclick="candidateLike()">
+
+        ♥
+
+      </button>
+
+      <button class="action scout" onclick="scout()">
+
+        ✨
+
+      </button>
 
     </div>
 
-  </div>
+    <div class="match-box hidden" id="matchBox">
 
-</div>
+      <div style="font-size:45px;">💕</div>
 
-<div class="buttons">
+      <h2>MATCH!</h2>
 
-  <button class="action">
+      <p>
 
-    ✕
+        りこさんと<br>
 
-  </button>
+        「炭火焼肉 こはる」がマッチしました！
 
-  <button class="action">
+      </p>
 
-    ★
+      <button onclick="startChat()">
 
-  </button>
+        メッセージを始める
 
-  <button class="action like" onclick="match()">
+      </button>
 
-    ♥
+    </div>
 
-  </button>
+  </main>
 
-</div>
-
-</main>
+</section>
 
 <nav>
 
-  <button>🔎<br>求人</button>
+  <button onclick="showJob()">
 
-  <button>✨<br>スカウト</button>
+    <span>🔎</span><br>
 
-  <button>💕<br>MATCH</button>
+    求人
 
-  <button>🌷<br>プロフィール</button>
+  </button>
+
+  <button onclick="showStore()">
+
+    <span>🏪</span><br>
+
+    店舗
+
+  </button>
+
+  <button onclick="showMatch()">
+
+    <span>💕</span><br>
+
+    MATCH
+
+  </button>
+
+  <button onclick="profile()">
+
+    <span>🌷</span><br>
+
+    プロフィール
+
+  </button>
 
 </nav>
 
+<div class="toast" id="toast"></div>
+
 <script>
 
-function match() {
+function showJob() {
 
-  alert("💕 MATCHしました！");
+  document.getElementById("jobScreen").classList.remove("hidden");
+
+  document.getElementById("storeScreen").classList.add("hidden");
+
+  document.getElementById("jobMode").classList.add("active");
+
+  document.getElementById("storeMode").classList.remove("active");
+
+}
+
+function showStore() {
+
+  document.getElementById("jobScreen").classList.add("hidden");
+
+  document.getElementById("storeScreen").classList.remove("hidden");
+
+  document.getElementById("jobMode").classList.remove("active");
+
+  document.getElementById("storeMode").classList.add("active");
+
+}
+
+function showMessage(message) {
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.style.display = "block";
+
+  setTimeout(() => {
+
+    toast.style.display = "none";
+
+  }, 1800);
+
+}
+
+function jobLike() {
+
+  showMessage("💕 お店にLIKEしました！");
+
+  setTimeout(() => {
+
+    showMessage("✨ MATCHしました！");
+
+  }, 1000);
+
+}
+
+function pass() {
+
+  showMessage("👋 次のお店を探します");
+
+}
+
+function favorite() {
+
+  showMessage("⭐ お気に入りに追加しました");
+
+}
+
+function candidatePass() {
+
+  showMessage("👋 次の求職者を探します");
+
+}
+
+function candidateLike() {
+
+  showMessage("💕 求職者にLIKEしました！");
+
+  setTimeout(() => {
+
+    document.getElementById("matchBox").classList.remove("hidden");
+
+  }, 900);
+
+}
+
+function scout() {
+
+  showMessage("✨ スカウトを送りました！");
+
+}
+
+function startChat() {
+
+  showMessage("💬 チャット画面を開きます");
+
+}
+
+function showMatch() {
+
+  showStore();
+
+  document.getElementById("matchBox").classList.remove("hidden");
+
+}
+
+function profile() {
+
+  showMessage("🌷 プロフィール画面（準備中）");
 
 }
 

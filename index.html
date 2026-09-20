@@ -4,886 +4,634 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Shoku↔match</title>
+<title>Shoku↔match</title>
 
-  <style>
+<style>
 
-    * {
+* {
 
-      box-sizing: border-box;
+  box-sizing: border-box;
 
-      margin: 0;
+}
 
-      padding: 0;
+body {
 
-    }
+  margin: 0;
 
-    body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 
-      font-family:
+  background: #fff7fa;
 
-        -apple-system,
+  color: #302a30;
 
-        BlinkMacSystemFont,
+}
 
-        "Helvetica Neue",
+header {
 
-        "Hiragino Kaku Gothic ProN",
+  background: white;
 
-        "Yu Gothic",
+  padding: 18px 20px;
 
-        sans-serif;
+  border-bottom: 1px solid #eee;
 
-      background: #fff8fb;
+  position: sticky;
 
-      color: #29252b;
+  top: 0;
 
-      min-height: 100vh;
+  z-index: 10;
 
-    }
+}
 
-    button {
+.logo {
 
-      font-family: inherit;
+  font-size: 24px;
 
-      cursor: pointer;
+  font-weight: 900;
 
-    }
+}
 
-    /* =========================
+.logo .pink {
 
-       HEADER
+  color: #ff4f8b;
 
-    ========================= */
+}
 
-    header {
+.logo .purple {
 
-      height: 72px;
+  color: #6961ff;
 
-      background: rgba(255,255,255,0.95);
+}
 
-      border-bottom: 1px solid #f0e5eb;
+.hero {
 
-      display: flex;
+  text-align: center;
 
-      align-items: center;
+  padding: 45px 20px 30px;
 
-      justify-content: space-between;
+  background: linear-gradient(135deg, #ffe1ed, #e8e5ff);
 
-      padding: 0 6%;
+}
 
-      position: sticky;
+.hero h1 {
 
-      top: 0;
+  font-size: 38px;
 
-      z-index: 50;
+  line-height: 1.15;
 
-      backdrop-filter: blur(12px);
+  margin: 15px 0;
 
-    }
+}
 
-    .logo {
+.hero h1 span {
 
-      font-size: 25px;
+  color: #ff4f8b;
 
-      font-weight: 900;
+}
 
-      letter-spacing: -1px;
+.hero p {
 
-    }
+  color: #6f6870;
 
-    .logo span:first-child {
+  line-height: 1.7;
 
-      color: #ff5b91;
+}
 
-    }
+main {
 
-    .logo span:last-child {
+  max-width: 520px;
 
-      color: #6c63ff;
+  margin: auto;
 
-    }
+  padding: 20px;
 
-    .header-badge {
+}
 
-      background: #fff0f6;
+.title {
 
-      color: #ff4f89;
+  font-size: 20px;
 
-      padding: 7px 12px;
+  font-weight: 900;
 
-      border-radius: 999px;
+  margin-bottom: 15px;
 
-      font-size: 11px;
+}
 
-      font-weight: 800;
+.card {
 
-    }
+  background: white;
 
-    /* =========================
+  border-radius: 28px;
 
-       HERO
+  overflow: hidden;
 
-    ========================= */
+  box-shadow: 0 12px 35px rgba(0,0,0,.1);
 
-    .hero {
+}
 
-      padding: 55px 20px 35px;
+.card-top {
 
-      text-align: center;
+  padding: 28px;
 
-      background:
+  background: linear-gradient(135deg, #fff0f6, #f0efff);
 
-        radial-gradient(circle at 15% 20%, #ffd9e8 0, transparent 28%),
+}
 
-        radial-gradient(circle at 85% 20%, #dcd9ff 0, transparent 28%),
+.emoji {
 
-        #fff8fb;
+  width: 75px;
 
-    }
+  height: 75px;
 
-    .hero-small {
+  background: white;
 
-      display: inline-block;
+  border-radius: 22px;
 
-      background: white;
+  display: flex;
 
-      color: #ff568d;
+  align-items: center;
 
-      border: 1px solid #ffd1e2;
+  justify-content: center;
 
-      border-radius: 999px;
+  font-size: 40px;
 
-      padding: 7px 15px;
+  margin-bottom: 18px;
 
-      font-size: 12px;
+}
 
-      font-weight: 800;
+.card h2 {
 
-      margin-bottom: 18px;
+  margin: 0 0 8px;
 
-    }
+}
 
-    .hero h1 {
+.station {
 
-      font-size: clamp(34px, 7vw, 62px);
+  color: #777;
 
-      line-height: 1.05;
+  font-size: 13px;
 
-      font-weight: 900;
+}
 
-      letter-spacing: -2px;
+.type {
 
-      margin-bottom: 18px;
+  display: inline-block;
 
-    }
+  margin-top: 12px;
 
-    .hero h1 .pink {
+  background: #6961ff;
 
-      color: #ff518b;
+  color: white;
 
-    }
+  padding: 6px 12px;
 
-    .hero h1 .purple {
+  border-radius: 20px;
 
-      color: #6d63ff;
+  font-size: 12px;
 
-    }
+  font-weight: bold;
 
-    .hero p {
+}
 
-      color: #777078;
+.card-body {
 
-      font-size: 15px;
+  padding: 25px;
 
-      line-height: 1.8;
+}
 
-    }
+.salary {
 
-    /* =========================
+  color: #ff4f8b;
 
-       MAIN
+  font-size: 28px;
 
-    ========================= */
+  font-weight: 900;
 
-    main {
+}
 
-      max-width: 1100px;
+.tags {
 
-      margin: auto;
+  display: flex;
 
-      padding: 10px 20px 120px;
+  flex-wrap: wrap;
 
-    }
+  gap: 7px;
 
-    .section-title {
+  margin: 18px 0;
 
-      display: flex;
+}
 
-      align-items: center;
+.tag {
 
-      justify-content: space-between;
+  background: #f0efff;
 
-      margin: 25px 0 15px;
+  color: #625bdf;
 
-    }
+  padding: 7px 10px;
 
-    .section-title h2 {
+  border-radius: 9px;
 
-      font-size: 21px;
+  font-size: 11px;
 
-      font-weight: 900;
+  font-weight: bold;
 
-    }
+}
 
-    .section-title span {
+.tag.green {
 
-      font-size: 12px;
+  background: #eafaf3;
 
-      color: #999;
+  color: #299b6d;
 
-    }
+}
 
-    /* =========================
+.info {
 
-       FILTER
+  display: grid;
 
-    ========================= */
+  grid-template-columns: 1fr 1fr;
 
-    .filters {
+  gap: 10px;
 
-      display: flex;
+}
 
-      gap: 8px;
+.info div {
 
-      overflow-x: auto;
+  background: #faf8fa;
 
-      padding: 5px 0 15px;
+  padding: 13px;
 
-      scrollbar-width: none;
+  border-radius: 13px;
 
-    }
+}
 
-    .filters::-webkit-scrollbar {
+.info small {
 
-      display: none;
+  display: block;
 
-    }
+  color: #999;
 
-    .filter {
+  font-size: 10px;
 
-      flex: 0 0 auto;
+  margin-bottom: 5px;
 
-      border: 1px solid #eadfe5;
+}
 
-      background: white;
+.info strong {
 
-      color: #625b61;
+  font-size: 12px;
 
-      padding: 9px 15px;
+}
 
-      border-radius: 999px;
+.mbti {
 
-      font-size: 12px;
+  margin-top: 20px;
 
-      font-weight: 700;
+  padding: 17px;
 
-    }
+  border-radius: 18px;
 
-    .filter.active {
+  background: linear-gradient(135deg,#f0efff,#fff0f6);
 
-      background: #ff5a91;
+}
 
-      color: white;
+.mbti small {
 
-      border-color: #ff5a91;
+  color: #777;
 
-    }
+}
 
-    /* =========================
+.mbti strong {
 
-       JOB CARD
+  display: block;
 
-    ========================= */
+  color: #6961ff;
 
-    .card-area {
+  font-size: 20px;
 
-      max-width: 520px;
+  margin-top: 5px;
 
-      margin: 0 auto;
+}
 
-      position: relative;
+.buttons {
 
-    }
+  display: flex;
 
-    .job-card {
+  justify-content: center;
 
-      background: white;
+  gap: 18px;
 
-      border-radius: 28px;
+  margin: 25px 0;
 
-      overflow: hidden;
+}
 
-      box-shadow: 0 15px 45px rgba(67, 35, 52, 0.12);
+button {
 
-      border: 1px solid #f1e6eb;
+  border: none;
 
-      animation: cardIn 0.35s ease;
+  cursor: pointer;
 
-    }
+}
 
-    @keyframes cardIn {
+.action {
 
-      from {
+  width: 65px;
 
-        opacity: 0;
+  height: 65px;
 
-        transform: translateY(15px) scale(.98);
+  border-radius: 50%;
 
-      }
+  background: white;
 
-      to {
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
 
-        opacity: 1;
+  font-size: 25px;
 
-        transform: translateY(0) scale(1);
+}
 
-      }
+.like {
 
-    }
+  width: 75px;
 
-    .job-top {
+  height: 75px;
 
-      padding: 28px;
+  background: #ff4f8b;
 
-      background:
+  color: white;
 
-        linear-gradient(135deg, #ffedf4, #f1efff);
+}
 
-      position: relative;
+nav {
 
-    }
+  position: fixed;
 
-    .job-emoji {
+  bottom: 0;
 
-      width: 75px;
+  left: 0;
 
-      height: 75px;
+  right: 0;
 
-      border-radius: 22px;
+  height: 70px;
 
-      background: white;
+  background: white;
 
-      display: flex;
+  border-top: 1px solid #eee;
 
-      align-items: center;
+  display: flex;
 
-      justify-content: center;
+  justify-content: center;
 
-      font-size: 40px;
+  gap: 35px;
 
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  align-items: center;
 
-      margin-bottom: 18px;
+}
 
-    }
+nav button {
 
-    .job-top h3 {
+  background: none;
 
-      font-size: 25px;
+  color: #777;
 
-      margin-bottom: 7px;
+  font-size: 11px;
 
-    }
+}
 
-    .station {
+nav button:first-child {
 
-      color: #706970;
+  color: #ff4f8b;
 
-      font-size: 13px;
+}
 
-    }
+body {
 
-    .job-type {
+  padding-bottom: 80px;
 
-      display: inline-block;
+}
 
-      margin-top: 13px;
+</style>
 
-      background: #6d63ff;
+</head>
 
-      color: white;
+<body>
 
-      padding: 6px 11px;
+<header>
 
-      border-radius: 999px;
+  <div class="logo">
 
-      font-size: 11px;
+    <span class="pink">Shoku</span><span class="purple">↔match</span>
 
-      font-weight: 800;
+  </div>
 
-    }
+</header>
 
-    .like-match {
+<section class="hero">
 
-      position: absolute;
+  <div>🍽 飲食バイト・求人マッチング</div>
 
-      right: 20px;
+  <h1>
 
-      top: 20px;
+    働く場所も、<br>
 
-      background: white;
+    <span>相性</span>で選ぶ。
 
-      padding: 10px 12px;
+  </h1>
 
-      border-radius: 15px;
+  <p>
 
-      text-align: center;
+    条件だけじゃ分からない。<br>
 
-      box-shadow: 0 7px 20px rgba(0,0,0,.08);
+    お店の雰囲気とあなたの性格までマッチング。
 
-    }
+  </p>
 
-    .like-match strong {
+</section>
 
-      display: block;
+<main>
 
-      font-size: 20px;
+<div class="title">
 
-      color: #ff4f89;
+  あなたに合いそうなお店
 
-    }
+</div>
 
-    .like-match small {
+<div class="card">
 
-      font-size: 9px;
+  <div class="card-top">
 
-      color: #888;
+    <div class="emoji">🥩</div>
 
-    }
+    <h2>炭火焼肉 こはる</h2>
 
-    .job-body {
+    <div class="station">
 
-      padding: 24px;
+      📍 池袋駅 徒歩3分
 
-    }
+    </div>
 
-    .salary {
+    <div class="type">
 
-      font-size: 29px;
+      焼肉
 
-      font-weight: 900;
+    </div>
 
-      color: #ff4f89;
+  </div>
 
-      margin-bottom: 16px;
+  <div class="card-body">
 
-    }
+    <div class="salary">
 
-    .salary small {
+      ¥1,600〜
 
-      font-size: 12px;
+    </div>
 
-      color: #777;
+    <div class="tags">
 
-      font-weight: 600;
+      <span class="tag green">髪色自由</span>
 
-    }
+      <span class="tag green">ネイルOK</span>
 
-    .tags {
+      <span class="tag green">ピアスOK</span>
 
-      display: flex;
+      <span class="tag">まかない</span>
 
-      flex-wrap: wrap;
+      <span class="tag">交通費支給</span>
 
-      gap: 7px;
+    </div>
 
-      margin-bottom: 22px;
+    <div class="info">
 
-    }
+      <div>
 
-    .tag {
+        <small>勤務時間</small>
 
-      background: #f7f5ff;
+        <strong>17:00〜23:30</strong>
 
-      color: #665ee8;
+      </div>
 
-      padding: 7px 10px;
+      <div>
 
-      border-radius: 9px;
+        <small>週何日</small>
 
-      font-size: 11px;
+        <strong>週2〜OK</strong>
 
-      font-weight: 800;
+      </div>
 
-    }
+      <div>
 
-    .tag.green {
+        <small>服装</small>
 
-      background: #edfbf5;
+        <strong>黒Tシャツ＋エプロン</strong>
 
-      color: #31a878;
+      </div>
 
-    }
+      <div>
 
-    .info-grid {
+        <small>年齢層</small>
 
-      display: grid;
+        <strong>20代中心</strong>
 
-      grid-template-columns: 1fr 1fr;
+      </div>
 
-      gap: 10px;
+      <div>
 
-      margin-bottom: 20px;
+        <small>雰囲気</small>
 
-    }
+        <strong>ワイワイ</strong>
 
-    .info-box {
+      </div>
 
-      background: #faf8fa;
+      <div>
 
-      padding: 13px;
+        <small>男女比</small>
 
-      border-radius: 14px;
+        <strong>4：6</strong>
 
-    }
+      </div>
 
-    .info-box small {
+      <div>
 
-      display: block;
+        <small>通勤</small>
 
-      color: #9b9399;
+        <strong>自転車OK</strong>
 
-      font-size: 10px;
+      </div>
 
-      margin-bottom: 5px;
+      <div>
 
-    }
+        <small>シフト提出</small>
 
-    .info-box strong {
+        <strong>2週間ごと</strong>
 
-      font-size: 12px;
+      </div>
 
-    }
+    </div>
 
-    .sub-title {
+    <div class="mbti">
 
-      font-size: 13px;
+      <small>🧠 MBTI MATCH</small>
 
-      font-weight: 900;
+      <strong>
 
-      margin: 20px 0 10px;
+        ENFP / ESFP と相性◎
 
-    }
+      </strong>
 
-    .task-list {
+    </div>
 
-      display: flex;
+  </div>
 
-      flex-wrap: wrap;
+</div>
 
-      gap: 6px;
+<div class="buttons">
 
-    }
+  <button class="action">
 
-    .task {
+    ✕
 
-      border: 1px solid #eee7eb;
+  </button>
 
-      padding: 7px 9px;
+  <button class="action">
 
-      border-radius: 8px;
+    ★
 
-      font-size: 10px;
+  </button>
 
-      color: #686067;
+  <button class="action like" onclick="match()">
 
-    }
+    ♥
 
-    /* =========================
+  </button>
 
-       MBTI
+</div>
 
-    ========================= */
+</main>
 
-    .mbti-box {
+<nav>
 
-      background: linear-gradient(135deg, #f1efff, #fff0f6);
+  <button>🔎<br>求人</button>
 
-      border-radius: 18px;
+  <button>✨<br>スカウト</button>
 
-      padding: 16px;
+  <button>💕<br>MATCH</button>
 
-      margin-top: 20px;
+  <button>🌷<br>プロフィール</button>
 
-    }
+</nav>
 
-    .mbti-title {
+<script>
 
-      font-size: 11px;
+function match() {
 
-      color: #756d76;
+  alert("💕 MATCHしました！");
 
-      font-weight: 800;
+}
 
-      margin-bottom: 5px;
+</script>
 
-    }
+</body>
 
-    .mbti-result {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-    }
-
-    .mbti-result strong {
-
-      font-size: 21px;
-
-      color: #6d63ff;
-
-    }
-
-    .mbti-result span {
-
-      background: white;
-
-      padding: 7px 10px;
-
-      border-radius: 999px;
-
-      font-size: 10px;
-
-      font-weight: 800;
-
-      color: #ff508a;
-
-    }
-
-    /* =========================
-
-       SWIPE BUTTONS
-
-    ========================= */
-
-    .swipe-buttons {
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 18px;
-
-      margin: 25px 0 10px;
-
-    }
-
-    .swipe-btn {
-
-      border: none;
-
-      width: 62px;
-
-      height: 62px;
-
-      border-radius: 50%;
-
-      background: white;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,.12);
-
-      font-size: 25px;
-
-      transition: .2s;
-
-    }
-
-    .swipe-btn:hover {
-
-      transform: scale(1.08);
-
-    }
-
-    .pass {
-
-      color: #ff6374;
-
-    }
-
-    .like {
-
-      width: 74px;
-
-      height: 74px;
-
-      background: #ff5790;
-
-      color: white;
-
-      font-size: 30px;
-
-    }
-
-    .super {
-
-      color: #6d63ff;
-
-    }
-
-    /* =========================
-
-       NAV
-
-    ========================= */
-
-    .bottom-nav {
-
-      position: fixed;
-
-      bottom: 0;
-
-      left: 0;
-
-      right: 0;
-
-      height: 75px;
-
-      background: rgba(255,255,255,.96);
-
-      backdrop-filter: blur(15px);
-
-      border-top: 1px solid #eee4e9;
-
-      display: flex;
-
-      justify-content: center;
-
-      z-index: 100;
-
-    }
-
-    .nav-inner {
-
-      width: 100%;
-
-      max-width: 600px;
-
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-    }
-
-    .nav-btn {
-
-      border: none;
-
-      background: transparent;
-
-      color: #9b9299;
-
-      font-size: 10px;
-
-      font-weight: 700;
-
-    }
-
-    .nav-btn div {
-
-      font-size: 21px;
-
-      margin-bottom: 3px;
-
-    }
-
-    .nav-btn.active {
-
-      color: #ff518b;
-
-    }
-
-    /* =========================
-
-       OTHER SCREENS
-
-    ========================= */
-
-    .screen {
-
-      display: none;
-
-    }
-
-    .screen.active {
-
-      display: block;
-
-    }
-
-    .profile-card,
-
-    .match-card,
-
-    .scout-card {
-
-      background: white;
-
-      border: 1px solid #f0e5eb;
-
-      border-radius: 24px;
-
-      padding: 25px;
-
-      box-shadow: 0 10px 35px rgba(67,35,52,.08);
-
-      margin-bottom: 15px;
-
-    }
-
-    .profile-head {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 15px;
-
-      margin-bottom: 20px;
-
-    }
-
-    .avatar {
-
-      width: 70px;
-
-      height: 70px;
-
-      border-radius: 22px;
-
-      background: linear-gradient(135deg,#ffd7e7,#ddd9ff);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      font-size: 35px;
-
-    }
-
-    .profile-head h3 {
-
-      font-size: 20px;
-
-      margin-b
+</html>

@@ -1081,7 +1081,7 @@ function openJob(id) {
     selectedJob.tags
       .map(
         tag =>
-          <span>${tag}</span>
+          `<span>${tag}</span>`
       )
       .join("");
 

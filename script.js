@@ -1137,8 +1137,11 @@ function toggleLike(id) {
 
 
   localStorage.setItem(
-    "shokumatchLikes",// ==============================
-// script.js ③
+    "shokumatchLikes",
+    JSON.stringify(likedJobs)
+ );
+  
+// ==============================
 // 会員登録
 // ==============================
 

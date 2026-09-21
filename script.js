@@ -1466,7 +1466,7 @@ document
       if (selectedJob) {
 
         alert(
-          ${selectedJob.name}の応募情報入力画面は、次の段階で実装します！
+          `${selectedJob.name}の応募情報入力画面は、次の段階で実装します！`
         );
 
       }

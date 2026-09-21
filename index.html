@@ -1,691 +1,1246 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ff5f78">
 
-  <title>Shoku↔match｜飲食専門求人マッチング</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="stylesheet" href="./style.css">
+  <meta
+    name="theme-color"
+    content="#ff5f78"
+  >
+
+  <title>
+    Shoku↔match｜飲食専門求人マッチング
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
 </head>
+
 
 <body>
 
 <div class="app">
 
-  <!-- =====================
-       HOME
-  ====================== -->
 
-  <section id="home" class="screen active">
+<!-- =========================
+     HOME
+========================= -->
 
-    <header class="header">
-      <div class="logo">
-        Shoku<span>↔</span>match
-      </div>
+<section
+  id="home"
+  class="screen active"
+>
 
-      <div class="header-sub">
-        飲食専門求人
-      </div>
-    </header>
+  <header class="header">
 
-
-    <div class="hero">
-
-      <div class="hero-badge">
-        🍽 飲食業界専門マッチング
-      </div>
-
-      <h1>
-        バイト探しを、<br>
-        <span>もっと相性で。</span>
-      </h1>
-
-      <p class="hero-text">
-        時給や場所だけじゃない。<br>
-        あなたの性格・働き方・価値観から<br>
-        「本当に合うお店」を見つけます。
-      </p>
-
-      <button
-        class="primary-button"
-        id="startDiagnosisButton"
-        type="button"
-      >
-        無料で仕事タイプ診断
-      </button>
-
-      <button
-        class="outline-button"
-        data-screen="jobs"
-        type="button"
-      >
-        求人を見てみる
-      </button>
-
-      <div class="hero-note">
-        ✓ 約2分　✓ 全12問　✓ 登録なしで診断
-      </div>
-
+    <div class="logo">
+      Shoku<span>↔</span>match
     </div>
 
-
-    <div class="section">
-
-      <p class="eyebrow">
-        WHY SHOKU↔MATCH?
-      </p>
-
-      <h2 class="section-title">
-        飲食バイト探しを<br>
-        もっとシンプルに。
-      </h2>
-
-
-      <div class="feature-grid">
-
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            📝
-          </div>
-
-          <div>
-
-            <h3>
-              履歴書を何度も作らない
-            </h3>
-
-            <p>
-              一度プロフィールを作れば、
-              お店ごとに履歴書を作り直す必要はありません。
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            💘
-          </div>
-
-          <div>
-
-            <h3>
-              条件＋相性で探せる
-            </h3>
-
-            <p>
-              独自の仕事タイプ診断から、
-              あなたと相性の良い職場をおすすめします。
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <div class="feature-icon">
-            📅
-          </div>
-
-          <div>
-
-            <h3>
-              面接までスムーズ
-            </h3>
-
-            <p>
-              面接候補日から希望日時を選択。
-              面倒なやり取りをできるだけ減らします。
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
+    <div class="header-sub">
+      飲食専門求人
     </div>
 
+  </header>
 
-    <div class="home-cta">
 
-      <p>
-        まずはあなたのタイプを知ってみよう
-      </p>
+  <div class="hero">
 
-      <button
-        class="primary-button"
-        id="startDiagnosisButton2"
-        type="button"
-      >
-        仕事タイプを診断する
-      </button>
-
+    <div class="hero-badge">
+      🍽 飲食業界専門マッチング
     </div>
 
-  </section>
+    <h1>
+      バイト探しを、<br>
+      <span>もっと相性で。</span>
+    </h1>
+
+    <p class="hero-text">
+      時給や場所だけじゃない。<br>
+      あなたの性格・働き方・価値観から<br>
+      「本当に合うお店」を見つけます。
+    </p>
 
 
-
-  <!-- =====================
-       DIAGNOSIS
-  ====================== -->
-
-  <section id="diagnosis" class="screen">
-
-    <header class="header">
-
-      <button
-        class="icon-button"
-        data-screen="home"
-        type="button"
-      >
-        ←
-      </button>
-
-      <strong>
-        仕事タイプ診断
-      </strong>
-
-      <div class="header-space"></div>
-
-    </header>
+    <button
+      class="primary-button"
+      id="startDiagnosisButton"
+      type="button"
+    >
+      無料で仕事タイプ診断
+    </button>
 
 
-    <main class="diagnosis-container">
-
-      <div class="diagnosis-top">
-
-        <span id="questionNumber">
-          QUESTION 1 / 12
-        </span>
-
-        <span>
-          約2分
-        </span>
-
-      </div>
+    <button
+      class="outline-button"
+      data-screen="jobs"
+      type="button"
+    >
+      求人を見てみる
+    </button>
 
 
-      <div class="progress-track">
+    <div class="hero-note">
+      ✓ 約2分　
+      ✓ 全12問　
+      ✓ 登録なしで診断
+    </div>
 
-        <div
-          id="progressBar"
-          class="progress-bar"
-        ></div>
-
-      </div>
+  </div>
 
 
-      <div class="question-area">
+  <div class="section">
 
-        <div class="question-icon">
-          💭
+    <p class="eyebrow">
+      WHY SHOKU↔MATCH?
+    </p>
+
+    <h2 class="section-title">
+      飲食バイト探しを<br>
+      もっとシンプルに。
+    </h2>
+
+
+    <div class="feature-grid">
+
+
+      <article class="feature-card">
+
+        <div class="feature-icon">
+          📝
         </div>
-
-        <h2 id="questionText">
-          質問
-        </h2>
-
-        <p>
-          直感で近い方を選んでください
-        </p>
-
-      </div>
-
-
-      <div
-        id="answerContainer"
-        class="answer-container"
-      ></div>
-
-
-      <button
-        id="previousQuestionButton"
-        class="text-button"
-        type="button"
-      >
-        ← ひとつ前の質問に戻る
-      </button>
-
-    </main>
-
-  </section>
-
-
-
-  <!-- =====================
-       RESULT
-  ====================== -->
-
-  <section id="result" class="screen">
-
-    <header class="header">
-
-      <div class="logo">
-        Shoku<span>↔</span>match
-      </div>
-
-      <div class="header-sub">
-        診断結果
-      </div>
-
-    </header>
-
-
-    <main class="result-container">
-
-      <p class="result-small">
-        YOUR WORK TYPE
-      </p>
-
-      <p class="result-lead">
-        あなたの仕事タイプは…
-      </p>
-
-
-      <div
-        id="resultEmoji"
-        class="result-emoji"
-      >
-        🦦
-      </div>
-
-
-      <div class="result-type-label">
-        MAIN TYPE
-      </div>
-
-      <h1 id="resultTitle">
-        愛されムードメーカー
-      </h1>
-
-
-      <p
-        id="resultDescription"
-        class="result-description"
-      ></p>
-
-
-      <div
-        id="resultTags"
-        class="tag-container"
-      ></div>
-
-
-      <div class="subtype-card">
 
         <div>
 
-          <span class="subtype-label">
-            SUB TYPE
-          </span>
+          <h3>
+            履歴書を何度も作らない
+          </h3>
 
-          <strong id="subTypeName">
-            バランサー
+          <p>
+            一度プロフィールを作れば、
+            お店ごとに履歴書を
+            作り直す必要はありません。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <div class="feature-icon">
+          💘
+        </div>
+
+        <div>
+
+          <h3>
+            条件＋相性で探せる
+          </h3>
+
+          <p>
+            独自の仕事タイプ診断から、
+            あなたと相性の良い職場を
+            おすすめします。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <div class="feature-icon">
+          📅
+        </div>
+
+        <div>
+
+          <h3>
+            面接までスムーズ
+          </h3>
+
+          <p>
+            面接候補日から希望日時を選択。
+            面倒なやり取りを
+            できるだけ減らします。
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="home-cta">
+
+    <p>
+      まずはあなたのタイプを
+      知ってみよう
+    </p>
+
+    <button
+      class="primary-button"
+      id="startDiagnosisButton2"
+      type="button"
+    >
+      仕事タイプを診断する
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     DIAGNOSIS
+========================= -->
+
+<section
+  id="diagnosis"
+  class="screen"
+>
+
+  <header class="header">
+
+    <button
+      class="icon-button"
+      data-screen="home"
+      type="button"
+    >
+      ←
+    </button>
+
+    <strong>
+      仕事タイプ診断
+    </strong>
+
+    <div class="header-space"></div>
+
+  </header>
+
+
+  <main class="diagnosis-container">
+
+    <div class="diagnosis-top">
+
+      <span id="questionNumber">
+        QUESTION 1 / 12
+      </span>
+
+      <span>
+        約2分
+      </span>
+
+    </div>
+
+
+    <div class="progress-track">
+
+      <div
+        id="progressBar"
+        class="progress-bar"
+      ></div>
+
+    </div>
+
+
+    <div class="question-area">
+
+      <div class="question-icon">
+        💭
+      </div>
+
+      <h2 id="questionText">
+        質問
+      </h2>
+
+      <p>
+        直感で近い方を
+        選んでください
+      </p>
+
+    </div>
+
+
+    <div
+      id="answerContainer"
+      class="answer-container"
+    ></div>
+
+
+    <button
+      id="previousQuestionButton"
+      class="text-button"
+      type="button"
+    >
+      ← ひとつ前の質問に戻る
+    </button>
+
+  </main>
+
+</section><!-- =========================
+     RESULT
+========================= -->
+
+<section
+  id="result"
+  class="screen"
+>
+
+  <header class="header">
+
+    <div class="logo">
+      Shoku<span>↔</span>match
+    </div>
+
+    <div class="header-sub">
+      診断結果
+    </div>
+
+  </header>
+
+
+  <main class="result-container">
+
+    <p class="result-small">
+      YOUR WORK TYPE
+    </p>
+
+    <p class="result-lead">
+      あなたの仕事タイプは…
+    </p>
+
+
+    <div
+      id="resultEmoji"
+      class="result-emoji"
+    >
+      🦦
+    </div>
+
+
+    <div class="result-type-label">
+      MAIN TYPE
+    </div>
+
+
+    <h1 id="resultTitle">
+      愛されムードメーカー
+    </h1>
+
+
+    <p
+      id="resultDescription"
+      class="result-description"
+    >
+      あなたの診断結果を
+      ここに表示します。
+    </p>
+
+
+    <div
+      id="resultTags"
+      class="tag-container"
+    ></div>
+
+
+    <div class="subtype-card">
+
+      <div>
+
+        <span class="subtype-label">
+          SUB TYPE
+        </span>
+
+        <strong id="subTypeName">
+          バランサー
+        </strong>
+
+      </div>
+
+
+      <div
+        id="subTypeEmoji"
+        class="subtype-emoji"
+      >
+        🦊
+      </div>
+
+    </div>
+
+
+    <div class="result-message">
+
+      <strong>
+        あなたに合う職場は…
+      </strong>
+
+      <p id="workplaceDescription">
+        診断結果から、
+        あなたに合う職場環境を
+        おすすめします。
+      </p>
+
+    </div>
+
+
+    <button
+      class="primary-button"
+      data-screen="jobs"
+      type="button"
+    >
+      あなたに合うお店を見る
+    </button>
+
+
+    <button
+      id="restartDiagnosisButton"
+      class="outline-button"
+      type="button"
+    >
+      もう一度診断する
+    </button>
+
+  </main>
+
+</section>
+
+
+
+<!-- =========================
+     JOBS
+========================= -->
+
+<section
+  id="jobs"
+  class="screen"
+>
+
+  <header class="header">
+
+    <div class="logo">
+      Shoku<span>↔</span>match
+    </div>
+
+
+    <button
+      class="header-like"
+      data-screen="likes"
+      type="button"
+    >
+      ♡
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <div class="jobs-heading">
+
+      <p class="eyebrow">
+        FOR YOU
+      </p>
+
+      <h1>
+        あなたに合うお店
+      </h1>
+
+      <p>
+        診断結果や希望条件から
+        おすすめしています
+      </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+      <span>
+        🔍
+      </span>
+
+      <input
+        id="jobSearch"
+        type="text"
+        placeholder="駅名・店名・業態から検索"
+      >
+
+    </div>
+
+
+    <div class="filters">
+
+      <button type="button">
+        📍 エリア
+      </button>
+
+      <button type="button">
+        💴 時給
+      </button>
+
+      <button type="button">
+        🍽 業態
+      </button>
+
+      <button type="button">
+        🕐 シフト
+      </button>
+
+    </div>
+
+
+    <div
+      id="jobList"
+      class="job-list"
+    ></div>
+
+  </main>
+
+</section>
+
+
+
+<!-- =========================
+     JOB DETAIL
+========================= -->
+
+<section
+  id="jobDetail"
+  class="screen"
+>
+
+  <header class="header">
+
+    <button
+      class="icon-button"
+      data-screen="jobs"
+      type="button"
+    >
+      ←
+    </button>
+
+
+    <strong>
+      求人詳細
+    </strong>
+
+
+    <button
+      id="detailLikeButton"
+      class="header-like"
+      type="button"
+    >
+      ♡
+    </button>
+
+  </header>
+
+
+  <main class="detail-container">
+
+    <div
+      id="detailImage"
+      class="detail-image"
+    >
+      🍝
+    </div>
+
+
+    <div class="detail-match">
+
+      <span>
+        あなたとの相性
+      </span>
+
+      <strong id="detailMatch">
+        96%
+      </strong>
+
+    </div>
+
+
+    <h1 id="detailName">
+      店舗名
+    </h1>
+
+
+    <p
+      id="detailCategory"
+      class="detail-category"
+    >
+      イタリアン
+    </p>
+
+
+    <div class="detail-information">
+
+      <div>
+
+        <span>
+          📍
+        </span>
+
+        <div>
+
+          <small>
+            勤務地
+          </small>
+
+          <strong id="detailLocation">
           </strong>
 
         </div>
 
-        <div
-          id="subTypeEmoji"
-          class="subtype-emoji"
-        >
-          🐕
+      </div>
+
+
+      <div>
+
+        <span>
+          💴
+        </span>
+
+        <div>
+
+          <small>
+            給与
+          </small>
+
+          <strong id="detailSalary">
+          </strong>
+
         </div>
 
       </div>
 
 
-      <div class="result-message">
+      <div>
 
-        <strong>
-          あなたに合う職場は…
-        </strong>
+        <span>
+          🕐
+        </span>
 
-        <p id="workplaceDescription">
-          スタッフ同士の距離が近く、
-          明るく活気のあるお店。
-        </p>
+        <div>
+
+          <small>
+            シフト
+          </small>
+
+          <strong id="detailShift">
+          </strong>
+
+        </div>
 
       </div>
+
+    </div>
+
+
+    <div class="detail-section">
+
+      <h2>
+        このお店について
+      </h2>
+
+      <p id="detailDescription">
+      </p>
+
+    </div>
+
+
+    <div class="detail-section">
+
+      <h2>
+        こんな人におすすめ
+      </h2>
+
+      <div
+        id="detailTags"
+        class="tag-container left"
+      ></div>
+
+    </div>
+
+
+    <div class="detail-section">
+
+      <h2>
+        働く条件
+      </h2>
+
+      <ul id="detailConditions">
+      </ul>
+
+    </div>
+
+
+    <div class="sticky-apply">
+
+      <button
+        id="detailBottomLike"
+        class="mini-like-button"
+        type="button"
+      >
+        ♡
+      </button>
+
+
+      <button
+        id="applyButton"
+        class="primary-button"
+        type="button"
+      >
+        このお店に応募したい
+      </button>
+
+    </div>
+
+  </main>
+
+</section><!-- =========================
+     REGISTER
+========================= -->
+
+<section
+  id="register"
+  class="screen"
+>
+
+  <header class="header">
+
+    <button
+      class="icon-button"
+      id="registerBackButton"
+      type="button"
+    >
+      ←
+    </button>
+
+    <strong>
+      無料会員登録
+    </strong>
+
+    <div class="header-space">
+    </div>
+
+  </header>
+
+
+  <main class="form-container">
+
+    <div class="form-intro">
+
+      <div class="form-icon">
+        👋
+      </div>
+
+      <h1>
+        もう少しだけ<br>
+        あなたのことを
+        教えてください
+      </h1>
+
+      <p>
+        求人を見るための
+        基本プロフィールです。<br>
+        本名や住所は応募時まで
+        必要ありません。
+      </p>
+
+    </div>
+
+
+    <form id="registerForm">
+
+
+      <label class="form-group">
+
+        <span>
+          ユーザー名
+        </span>
+
+        <input
+          id="username"
+          type="text"
+          placeholder="例：りこ"
+          required
+        >
+
+      </label>
+
+
+      <label class="form-group">
+
+        <span>
+          年齢
+        </span>
+
+        <input
+          id="age"
+          type="number"
+          min="15"
+          max="99"
+          placeholder="例：27"
+          required
+        >
+
+      </label>
+
+
+      <label class="form-group">
+
+        <span>
+          飲食経験
+        </span>
+
+        <select
+          id="experience"
+          required
+        >
+
+          <option value="">
+            選択してください
+          </option>
+
+          <option>
+            未経験
+          </option>
+
+          <option>
+            1年未満
+          </option>
+
+          <option>
+            1〜3年
+          </option>
+
+          <option>
+            3〜5年
+          </option>
+
+          <option>
+            5年以上
+          </option>
+
+        </select>
+
+      </label>
+
+
+      <label class="form-group">
+
+        <span>
+          現在の状況
+        </span>
+
+        <select
+          id="workStatus"
+          required
+        >
+
+          <option value="">
+            選択してください
+          </option>
+
+          <option>
+            学生
+          </option>
+
+          <option>
+            アルバイト
+          </option>
+
+          <option>
+            正社員
+          </option>
+
+          <option>
+            フリーター
+          </option>
+
+          <option>
+            その他
+          </option>
+
+        </select>
+
+      </label>
 
 
       <button
         class="primary-button"
-        data-screen="jobs"
-        type="button"
+        type="submit"
       >
-        あなたに合うお店を見る
+        登録して続きを見る
       </button>
 
+    </form>
 
-      <button
-        id="restartDiagnosisButton"
-        class="outline-button"
-        type="button"
-      >
-        もう一度診断する
-      </button>
+  </main>
 
-    </main>
-
-  </section>
+</section>
 
 
 
-  <!-- =====================
-       JOBS
-  ====================== -->
+<!-- =========================
+     LIKES
+========================= -->
 
-  <section id="jobs" class="screen">
+<section
+  id="likes"
+  class="screen"
+>
 
-    <header class="header">
+  <header class="header">
 
-      <div class="logo">
-        Shoku<span>↔</span>match
+    <strong>
+      LIKE
+    </strong>
+
+    <span
+      id="likeCounter"
+      class="counter"
+    >
+      0 / 3
+    </span>
+
+  </header>
+
+
+  <main class="section">
+
+    <h1 class="page-title">
+      気になるお店
+    </h1>
+
+    <p class="page-description">
+      気になるお店を保存して
+      比較できます。
+    </p>
+
+
+    <div
+      id="likedJobList"
+      class="job-list liked-list"
+    ></div>
+
+  </main>
+
+</section>
+
+
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section
+  id="profile"
+  class="screen"
+>
+
+  <header class="header">
+
+    <strong>
+      マイページ
+    </strong>
+
+    <span>
+    </span>
+
+  </header>
+
+
+  <main class="profile-container">
+
+
+    <div class="profile-header">
+
+      <div class="avatar">
+        👤
       </div>
 
-      <button
-        class="header-like"
-        data-screen="likes"
-        type="button"
-      >
-        ♡
-      </button>
-
-    </header>
-
-
-    <main>
-
-      <div class="jobs-heading">
-
-        <p class="eyebrow">
-          FOR YOU
-        </p>
-
-        <h1>
-          あなたに合うお店
-        </h1>
-
-        <p>
-          診断結果や希望条件からおすすめしています
-        </p>
-
-      </div>
-
-
-      <div class="search-box">
-
-        <span>
-          🔍
-        </span>
-
-        <input
-          id="jobSearch"
-          type="text"
-          placeholder="駅名・店名・業態から検索"
-        >
-
-      </div>
-
-
-      <div class="filters">
-
-        <button type="button">
-          📍 エリア
-        </button>
-
-        <button type="button">
-          💴 時給
-        </button>
-
-        <button type="button">
-          🍽 業態
-        </button>
-
-        <button type="button">
-          🕐 シフト
-        </button>
-
-      </div>
-
-
-      <div
-        id="jobList"
-        class="job-list"
-      ></div>
-
-    </main>
-
-  </section>
-
-
-
-  <!-- =====================
-       JOB DETAIL
-  ====================== -->
-
-  <section id="jobDetail" class="screen">
-
-    <header class="header">
-
-      <button
-        class="icon-button"
-        data-screen="jobs"
-        type="button"
-      >
-        ←
-      </button>
-
-      <strong>
-        求人詳細
-      </strong>
-
-      <button
-        id="detailLikeButton"
-        class="header-like"
-        type="button"
-      >
-        ♡
-      </button>
-
-    </header>
-
-
-    <main class="detail-container">
-
-      <div
-        id="detailImage"
-        class="detail-image"
-      >
-        🍝
-      </div>
-
-
-      <div class="detail-match">
-
-        <span>
-          あなたとの相性
-        </span>
-
-        <strong id="detailMatch">
-          96%
-        </strong>
-
-      </div>
-
-
-      <h1 id="detailName">
-        店舗名
+      <h1 id="profileUsername">
+        ゲストユーザー
       </h1>
 
-
-      <p
-        id="detailCategory"
-        class="detail-category"
-      >
-        イタリアン
+      <p id="profileStatus">
+        プロフィールを
+        完成させましょう
       </p>
 
-
-      <div class="detail-information">
-
-        <div>
-          <span>📍</span>
-
-          <div>
-            <small>勤務地</small>
-            <strong id="detailLocation"></strong>
-          </div>
-        </div>
+    </div>
 
 
-        <div>
-          <span>💴</span>
+    <div class="completion-card">
 
-          <div>
-            <small>給与</small>
-            <strong id="detailSalary"></strong>
-          </div>
-        </div>
+      <div class="completion-top">
 
+        <strong>
+          プロフィール完成度
+        </strong>
 
-        <div>
-          <span>🕐</span>
-
-          <div>
-            <small>シフト</small>
-            <strong id="detailShift"></strong>
-          </div>
-        </div>
+        <span id="completionPercentage">
+          35%
+        </span>
 
       </div>
 
 
-      <div class="detail-section">
-
-        <h2>
-          このお店について
-        </h2>
-
-        <p id="detailDescription"></p>
-
-      </div>
-
-
-      <div class="detail-section">
-
-        <h2>
-          こんな人におすすめ
-        </h2>
+      <div class="completion-track">
 
         <div
-          id="detailTags"
-          class="tag-container left"
+          id="completionBar"
+          class="completion-bar"
         ></div>
 
       </div>
 
 
-      <div class="detail-section">
+      <p>
+        プロフィールを充実させると
+        LIKEできる店舗数が
+        増えます。
+      </p>
 
-        <h2>
-          働く条件
-        </h2>
+    </div>
 
-        <ul id="detailConditions"></ul>
+
+    <div class="profile-card">
+
+      <h2>
+        基本情報
+      </h2>
+
+
+      <div class="profile-row">
+
+        <span>
+          年齢
+        </span>
+
+        <strong id="profileAge">
+          未設定
+        </strong>
+
+      </div>
+
+
+      <div class="profile-row">
+
+        <span>
+          飲食経験
+        </span>
+
+        <strong id="profileExperience">
+          未設定
+        </strong>
 
       </div>
 
 
-      <div class="sticky-apply">
+      <div class="profile-row">
 
-        <button
-          id="detailBottomLike"
-          class="mini-like-button"
-          type="button"
-        >
-          ♡
-        </button>
+        <span>
+          現在の状況
+        </span>
 
-        <button
-          id="applyButton"
-          class="primary-button"
-          type="button"
-        >
-          このお店に応募したい
-        </button>
+        <strong id="profileWorkStatus">
+          未設定
+        </strong>
 
       </div>
 
-    </main>
-
-  </section>
+    </div>
 
 
+    <div class="profile-card">
 
-  <!-- =====================
-       REGISTER
-  ====================== -->
-
-  <section id="register" class="screen">
-
-    <header class="header">
-
-      <button
-        class="icon-button"
-        id="registerBackButton"
-        type="button"
-      >
-        ←
-      </button>
-
-      <strong>
-        無料会員登録
-      </strong>
-
-      <div class="header-space"></div>
-
-    </header>
+      <h2>
+        仕事タイプ
+      </h2>
 
 
-    <main class="form-container">
+      <div class="type-profile">
 
-      <div class="form-intro">
-
-        <div class="form-icon">
-          👋
+        <div id="profileTypeEmoji">
+          ？
         </div>
 
-        <h1>
-          もう少しだけ<br>
-          あなたのことを教えてください
-        </h1>
 
-        <p>
-          求人を見るための基本プロフィールです。
-          本名や住所は応募時まで必要ありません。
-        </p>
+        <div>
+
+          <small>
+            MAIN TYPE
+          </small>
+
+          <strong id="profileType">
+            診断してみましょう
+          </strong>
+
+        </div>
 
       </div>
 
+    </div>
 
-      <form id="registerForm">
 
-        <label class="form-group">
+    <button
+      id="completeProfileButton"
+      class="primary-button"
+      type="button"
+    >
+      プロフィールを完成させる
+    </button>
 
-          <span>
-            ユーザー名
-          </span>
+  </main>
 
-          <input
+</section><!-- =========================
+     APPLY MODAL
+========================= -->
+
+<div
+  id="applyModal"
+  class="modal-background"
+>
+
+  <div class="modal">
+
+    <div class="modal-icon">
+      ✨
+    </div>
+
+
+    <h2>
+      このお店に応募しますか？
+    </h2>
+
+
+    <p>
+      Shoku↔matchでは、
+      履歴書を毎回作る必要はありません。<br>
+      応募時に必要な情報だけ
+      入力します。
+    </p>
+
+
+    <button
+      id="confirmApplyButton"
+      class="primary-button"
+      type="button"
+    >
+      応募情報の入力へ
+    </button>
+
+
+    <button
+      id="closeApplyButton"
+      class="modal-close"
+      type="button"
+    >
+      今はやめておく
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     BOTTOM NAVIGATION
+========================= -->
+
+<nav
+  id="bottomNavigation"
+  class="bottom-navigation"
+>
+
+  <button
+    data-screen="home"
+    type="button"
+  >
+
+    <span>
+      ⌂
+    </span>
+
+    ホーム
+
+  </button>
+
+
+  <button
+    data-screen="jobs"
+    type="button"
+  >
+
+    <span>
+      ⌕
+    </span>
+
+    求人
+
+  </button>
+
+
+  <button
+    data-screen="likes"
+    type="button"
+  >
+
+    <span>
+      ♡
+    </span>
+
+    LIKE
+
+  </button>
+
+
+  <button
+    data-screen="profile"
+    type="button"
+  >
+
+    <span>
+      ♙
+    </span>
+
+    マイページ
+
+  </button>
+
+</nav>
+
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="./script.js"></script>
+
+
+</body>
+
+</html>

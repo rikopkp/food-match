@@ -1140,7 +1140,7 @@ function toggleLike(id) {
     "shokumatchLikes",
     JSON.stringify(likedJobs)
  );
-  
+}
 // ==============================
 // 会員登録
 // ==============================

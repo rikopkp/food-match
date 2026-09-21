@@ -1502,7 +1502,7 @@ applyModal.addEventListener(
 
 renderProfile();
 renderJobs();
-renderLikes();
+// renderLikes();
 
 showScreen("home");
 

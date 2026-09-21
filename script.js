@@ -1095,7 +1095,7 @@ function openJob(id) {
     selectedJob.conditions
       .map(
         item =>
-          <li>${item}</li>
+          `<li>${item}</li>`
       )
       .join("");
 
